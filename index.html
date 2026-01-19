@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Pokemon</title>
+    <link rel="stylesheet" href="pokemon.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Find Your Pokemon</h1>
+            <p class="subtitle">Discover the stats and abilities of your favorite Pokemon</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-input-wrapper">
+                <input type="text" id="name" placeholder="Enter Pokemon name or ID..." oninput="filterPokemon(this.value)">
+                <div id="autocomplete-dropdown" class="autocomplete-dropdown" style="display: none;"></div>
+            </div>
+            <button onclick="fetchdata()" class="btn btn-search">Search</button>
+            <button onclick="getRandomPokemon()" class="btn btn-random">Random</button>
+        </div>
+
+        <div id="pokemon-card" class="pokemon-card" style="display: none;">
+            <div class="sprite-container">
+                <img src="" alt="pokemon sprite" id="pokemonsprite">
+            </div>
+
+            <div class="info-container">
+                <div class="header-info">
+                    <h2 id="pokemon-name"></h2>
+                    <p class="pokemon-id" id="pokemon-id"></p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>Type</h3>
+                        <div id="pokemon-type" class="type-badges"></div>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>Height</h3>
+                        <p id="pokemon-height"></p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>Weight</h3>
+                        <p id="pokemon-weight"></p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>Speed</h3>
+                        <p id="pokemon-speed"></p>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Habitat</h3>
+                    <p id="pokemon-habitat"></p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Base Stats</h3>
+                    <div id="pokemon-stats" class="stats-bars"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script src="pokemon.js"></script>
+</body>
+</html>
